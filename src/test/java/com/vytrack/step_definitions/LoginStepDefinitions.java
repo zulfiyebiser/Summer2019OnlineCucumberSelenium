@@ -8,14 +8,16 @@ import io.cucumber.java.en.*;
 import org.junit.Assert;
 
 
-public class LoginStepDefinitions {
+import java.util.Map;
 
+public class LoginStepDefinitions {
     // Write code here that turns the phrase above into concrete actions
     LoginPage loginPage = new LoginPage();//created login page object
 
     @Given("user is on the login page")
     public void user_is_on_the_login_page() {
         System.out.println("I am on the login page");
+        // to open login page
         Driver.get().get(ConfigurationReader.getProperty("url"));
     }
 
@@ -35,6 +37,7 @@ public class LoginStepDefinitions {
     public void user_verifies_that_page_subtitle_is_displayed(String string) {
         loginPage.waitUntilLoaderMaskDisappear();
         BrowserUtils.wait(2);
+        // to verify page title ...string -->expected title
         Assert.assertEquals(string, loginPage.getPageSubTitle());
         System.out.println("Verifying page subtitle: " + string);
     }
@@ -59,5 +62,31 @@ public class LoginStepDefinitions {
     public void user_verifies_that_message_is_displayed(String string) {
         System.out.println("Verified that warning message is displayed: "+string);
     }
+//    Then user logs in as driver with following credentials
+//            | username | user160     |
+//            | password | UserUser123 |
+
+    @Then("user logs in as driver with following credentials")
+    public void user_logs_in_as_driver_with_following_credentials(Map<String, String> dataTable) {
+        System.out.println(dataTable);
+        loginPage.login(dataTable.get("username"), dataTable.get("password"));
+    }
+
+
+    @Then("user logs in as {string}")
+    public void user_logs_in_as(String role) {
+        loginPage.login(role);
+    }
+
+    @Then("the page title should be {string}")
+    public void the_page_title_should_be(String string) {
+        BrowserUtils.waitForPageTitle(string);
+
+        Assert.assertEquals("Title is incorrect",string, Driver.get().getTitle());
+
+    }
+
+
+
 
 }

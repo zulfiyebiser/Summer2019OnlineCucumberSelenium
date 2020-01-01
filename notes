@@ -1,0 +1,45 @@
+CUCUMBER
+
+Test Driven Development - it's a development approach when before starting actual development, we create tests that will verify functionality (method).
+ Functionality will be verified over unit test. For unit test we can use TestNG or Junit. Both of them are unit testing frameworks.
+Junit is a pure unit testing framework.
+For example in repl.it almost all assignments use junit for verification.
+Usually developers write unit tests for their code.
+Unit testing is the lowest testing, and essential stage of development as well as code review.
+Sometimes SDET also involved into unit testing.
+But our focus is on functional testing with selenium webdriver.
+You were doing TDD whenever you were working on repl.it tasks.
+Every solution had to go though bunch of unit tests. Based on errors, you could understand how to fix your code.
+BDD is a branch of TDD.
+For implementing BDD we use Cucumber.
+1-Go to intellij --> file --> new maven project
+  group id: com.vytrack
+   artifact id: Summer2019OnlineCucumberSelenium
+   snapshot: default
+ click next -->
+  project name: Summer2019OnlineCucumberSelenium
+   Enable auto import!
+2- Then go to pom.xml file and add properties for java version:
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+Ignore intellij update, update intellij when you will find a job
+3- right click on test --> new directory named "resources"
+resources use to store test data
+4-then right click on resources --> new directory named "features"
+features - it's a folder where we gonna store tests.
+inside features folder we will create .feature files.
+5- right click on java --> new package --> com.vytrack.pages
+If your packages are not nested --> click on gear icon and unselect "Compact middle packages"
+right click on com.vytrack --> new package:
+    pages
+    runners
+    utilities
+    step_definitions
+If it's asking you for type of file, select .txt file for now.
+Click shift twice and type plugins
+Go to plugins and find Cucumber for java plugin and Gherkin.
+Install this plugin and restart IDE
+Make sure that you don't have Substep plugin. If you have it - delete it.
+Your .feature files will be green.

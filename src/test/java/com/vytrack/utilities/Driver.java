@@ -26,6 +26,14 @@ public class Driver {
                     //to configure chrome browser for tests
                     driver = new ChromeDriver();
                     break;
+                    /*
+
+Headless webdriver is much faster, because it doesn't display web page, tests are running in a background.
+
+Headless webdriver cannot upload files. This is a disadvantage of running tests in headless browser.
+
+You can still tale screenshots and do almost everything like with regular browser.
+                     */
                 case "chrome_headless":
                     WebDriverManager.chromedriver().setup();
                     //to configure chrome browser for tests
