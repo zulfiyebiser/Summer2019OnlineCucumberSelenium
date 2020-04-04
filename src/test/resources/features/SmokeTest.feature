@@ -7,6 +7,7 @@ Feature: Smoke test
   #hook before --> background --> scenario --> hook after
   #hook and background are completely optional.
 
+
   Background: open login page and login as store manager
     Given user is on the login page
     Then user logs in as store manager
@@ -24,4 +25,4 @@ Feature: Smoke test
 
   Scenario: Verify Accounts page
     And user navigates to "Customers" then to "Accounts"
-    Then user verifies that "q" page subtitle is displayed
+    Then user verifies that "All Accounts" page subtitle is displayed

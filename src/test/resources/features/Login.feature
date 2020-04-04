@@ -93,7 +93,7 @@ Feature: Login
     Given user is on the login page
     And user logs in as "<role>"
     When user navigates to "<module>" then to "<sub module>"
-    Then the page title should be "<title>"
+    Then the page title                should be "<title>"
     Examples: drivers
       | role   | module     | sub module      | title                                                        |
       | driver | Fleet      | Vehicles        | Car - Entities - System - Car - Entities - System            |

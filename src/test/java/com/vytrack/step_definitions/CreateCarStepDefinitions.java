@@ -24,8 +24,8 @@ public class CreateCarStepDefinitions {
     }
 
     //    Then user adds new car information:
-//            | License Plate | Driver      | Location        | Model Year | Color |
-//            | TestPlates    | Test Driver | Washington D.C. | 2020       | Black |
+//Colomn name | License Plate | Driver      | Location        | Model Year | Color |
+//      value | TestPlates    | Test Driver | Washington D.C. | 2020       | Black |
 //            | SomePlates    | Super Driver| Reston, VA      | 2012       | Red   |
 //      dataTable.get(0).get("Model Year") = 2020
 //    get(0) - means get data from first row (excluding column names or header)

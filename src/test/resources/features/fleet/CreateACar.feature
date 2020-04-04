@@ -7,6 +7,8 @@ Feature: Create new car
     Then user navigates to "Fleet" then to "Vehicles"
     And user click on "Create Car" button
     Then user adds new car information:
-      | License Plate | Driver      | Location        | Model Year | Color |
+              | License Plate | Driver      | Location        | Model Year | Color |
               | TestPlates    | Test Driver | Washington D.C. | 2020       | Black |
               | SomePlates    | Super Driver| Reston, VA      | 2012       | Red   |
+    # data table improves our test step
+    # examples tables uses Scenario outline provide to run same test with different parameter

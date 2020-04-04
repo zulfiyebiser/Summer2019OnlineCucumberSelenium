@@ -36,11 +36,11 @@ public class LoginStepDefinitions {
     @Then("user verifies that {string} page subtitle is displayed")
     public void user_verifies_that_page_subtitle_is_displayed(String string) {
         loginPage.waitUntilLoaderMaskDisappear();
-        BrowserUtils.wait(2);
-        // to verify page title ...string -->expected title
+        BrowserUtils.wait(5);
         Assert.assertEquals(string, loginPage.getPageSubTitle());
         System.out.println("Verifying page subtitle: " + string);
     }
+
 
     @Then("user logs in as driver")
     public void user_logs_in_as_driver() {
@@ -56,6 +56,7 @@ public class LoginStepDefinitions {
     @Then("user enters {string} username and {string} password")
     public void user_enters_username_and_password(String string, String string2) {
         System.out.println("Login with "+string+" username and "+string2+" password.");
+        loginPage.login(string,string);
     }
 
     @Then("user verifies that {string} message is displayed")
@@ -75,15 +76,16 @@ public class LoginStepDefinitions {
 
     @Then("user logs in as {string}")
     public void user_logs_in_as(String role) {
+
         loginPage.login(role);
     }
 
     @Then("the page title should be {string}")
     public void the_page_title_should_be(String string) {
         BrowserUtils.waitForPageTitle(string);
-
+    // to verify title
         Assert.assertEquals("Title is incorrect",string, Driver.get().getTitle());
-
+    // Driver.get().getTitle()--> to read title
     }
 
 

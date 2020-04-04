@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 public class CreateCarPage extends BasePage {
+
     @FindBy(css = "[id^='custom_entity_type_LicensePlate']")
     public WebElement licensePlateElement;
     @FindBy(name = "custom_entity_type[Driver]")
